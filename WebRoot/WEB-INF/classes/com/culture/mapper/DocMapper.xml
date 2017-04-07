@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+              "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+    <mapper namespace="com.culture.mapper.DocMapper" >
+
+		<update id="updateDoc" parameterType="doc">
+			update culture_article
+		     <set>
+			    <if test="title!=null">title=#{title},</if>
+			    <if test="passage!=null">passage=#{passage},</if>
+			    <if test="content!=null">content=#{content},</if>
+			    <if test="doctypeid!=0">doctypeid=#{doctypeid},</if>
+			    <if test="state>-1">state=#{state},</if>
+			    <if test="isPlay>-1">isPlay=#{isPlay},</if>
+			    <if test="isReply>-1">isReply=#{isReply},</if>
+			    <if test="isThumbsUp>-1">isThumbsUp=#{isThumbsUp},</if>
+			    <if test="url!=null">url=#{url},</if>
+			    <if test="reviewcount!=0">reviewcount=#{reviewcount},</if>
+			    <if test="creatorid!=0">creatorid=#{creatorid},</if>
+			    <if test="creatorname!=null">creatorname=#{creatorname},</if>
+			    <if test="createTime!=null">createTime=#{createTime},</if>
+			    <if test="releaseTime!=null">releaseTime=#{releaseTime},</if>
+		    </set>
+				where id=#{id}		
+		</update>
+		
+		<select id="getForPage" resultType="doc" parameterType="java.util.Map">
+			select id,title,passage,doctypeid,state,isPlay,isReply,isThumbsUp,url,reviewcount,writerid,creatorid,creatorname,createTime,releaseTime from culture_article
+				where 1=1 and state!=0
+				<if test="docType!=0">
+				  and doctypeid=#{docType} 
+				</if>
+			  order by 	releaseTime desc limit #{start},#{end}			
+		</select>
+		
+		<select id="getCount" parameterType="java.util.Map" resultType="java.util.Map">
+			select count(1) as count from culture_article 
+			where 1=1 and state!=0
+				<if test="docType!=0">
+					and doctypeid=#{docType} 
+				</if>
+		</select>		
+		<select id="getByTitelOrStateOrTypeOrIsPlayForPage" resultType="doc" parameterType="java.util.Map">
+			select id,title,passage,doctypeid,state,isPlay,isReply,isThumbsUp,url,reviewcount,writerid,creatorid,creatorname,createTime,releaseTime from culture_article
+			<where>
+				1=1
+				<if test="state!=0 and state!='0'">
+					and state=#{state}
+				</if>
+				<if test="state==0 or state=='0'">
+					and state!=#{state}
+				</if>
+				<if test="isPlay!=0 and isPlay!='0'">
+					and isPlay=#{isPlay}
+				</if>
+				<if test="docType!=0 and docType!='0'">
+					and doctypeid=#{docType}
+				</if>
+				<if test="title!=null">
+					<bind name="lititle" value="'%' + _parameter.title + '%'" />
+					and title LIKE #{lititle}
+				</if>
+			</where>
+			  order by releaseTime desc limit #{start},#{end}			
+		</select>
+		<select id="getByTitleForPage" resultType="doc" parameterType="java.util.Map">
+			select id,title,passage,doctypeid,state,isPlay,isReply,isThumbsUp,url,reviewcount,writerid,creatorid,creatorname,createTime,releaseTime from culture_article
+			<where>
+				1=1 and state!=0
+				<if test="docType!=0">
+					and doctypeid=#{docType}
+				</if>
+				<if test="title!=null">
+					<bind name="lititle" value="'%' + _parameter.title + '%'" />
+					and title LIKE #{lititle}
+				</if>
+			</where>
+			  order by 	releaseTime desc limit #{start},#{end}			
+		</select>
+		
+		<select id="getCountByTitelOrStateOrTypeOrIsPlay" parameterType="java.util.Map" resultType="java.util.Map">
+			select count(1) as count from culture_article
+			<where>
+				1=1 
+				<if test="state!=0 and state!='0'">
+					and state=#{state}
+				</if>
+				<if test="state==0 or state=='0'">
+					and state!=#{state}
+				</if>
+				<if test="isPlay!=0 and isPlay!='0'">
+					and isPlay=#{isPlay}
+				</if>
+				<if test="docType!=0 and docType!='0'">
+					and doctypeid=#{docType}
+				</if>
+				<if test="title!=null">
+					<bind name="lititle" value="'%' + _parameter.title + '%'" />
+					and title LIKE #{lititle}
+				</if>
+			</where>
+		</select>	
+			
+		<select id="getCountByTitle" parameterType="java.util.Map" resultType="java.util.Map">
+			select count(1) as count from culture_article
+			<where>
+				1=1 and state!=0
+				<if test="docType!=0">
+				and	doctypeid=#{docType}
+				</if>
+				<if test="title!=null">
+					<bind name="lititle" value="'%' + _parameter.title + '%'" />
+					and title LIKE #{lititle}
+				</if>
+			</where>
+		</select>		
+		
+		<insert id="addDoc" parameterType="doc" useGeneratedKeys="true" keyProperty="id">
+			insert into culture_article(title,passage,content,doctypeid,state,isPlay,isReply,isThumbsUp,url,reviewcount,writerid,creatorid,creatorname,createTime,releaseTime)
+			values(#{title},#{passage},#{content},#{doctypeid},#{state},#{isPlay},#{isReply},#{isThumbsUp},#{url},#{reviewcount},#{writerid},#{creatorid},#{creatorname},#{createTime},#{releaseTime})
+		</insert>
+    </mapper>

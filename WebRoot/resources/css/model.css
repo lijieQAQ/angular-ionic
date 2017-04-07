@@ -1,0 +1,142 @@
+html,body{height: 100%;width: 100%;}
+.content{width: 100%;height: 100%;padding-top: 20px;padding-bottom: 20px;}
+button{outline: none;}
+.d-tatle{margin-top: 20px;}
+.all-bg{background-color: RGBA(56,126,245,0.7);color: #ffffff;}
+.d-btn{padding:5px;padding-left: 13px;;padding-right: 13px;font-size: 1.2em;border-radius: 5px;border: none;text-align: center;}
+.d-btn:hover{background-color: RGBA(56,126,155,0.9);font-weight: bold;color:black;}
+.d-input{border-radius: 5px;outline: none;border: 1px solid RGBA(56,126,245,0.7);height: 30px;margin-top: 1px;}
+.selectpicker{ height: 34px; border-radius: 5px;border: 1px solid RGBA(56,126,245,0.7);padding:5px;padding-left: 10px;cursor: pointer;outline: none;}
+th{background-color: RGBA(56,126,245,0.7);color: #ffffff;text-align: center;}
+.table>*{text-align: center;}
+.dra_dialog{position: fixed;top: 0%;left: 30%;right: 30%;width: 40%;height: auto;background-color: #fff;border-radius:10px;text-align:center;z-index:1005;color:#000;}
+.dialog-show{top:15%;}
+.doc-detail-box{width: 100%;height: auto;border-bottom: 1px solid RGBA(56,126,245,0.4);padding-bottom: 5px;margin-bottom: 10px;}
+.doc-detail-box>.title{display: block;width: 100%;height: 40px;padding-left: 13px;font-size: 20px;font-weight: bolder;text-overflow: ellipsis; white-space: nowrap;overflow: hidden;}
+.doc-detail-box>.passage{display:inline-block;width: 48%;height: 30px;padding-left: 13px;text-overflow:ellipsis;white-space: nowrap;overflow: hidden;text-indent: 2em;}
+.doc-detail-box>.time{display: inline-block;width: 30%;height: 30px;text-align: center;}
+.doc-detail-box>.review{display: inline-block;width: 18.8%;text-align: right;}
+
+.docContent{max-height: 70%;overflow-x:hidden;overflow-y:auto;width: 100%;}
+.dra_img{max-width: 100%;height: auto;position: relative;}
+p{font-size: 16px;line-height: 25px;letter-spacing: 1px;}
+.page-index{float: right;}
+
+.d-tatle>*{font-size:10px; }
+
+#imgLoad{display: none;}
+.but-bottom{position: absolute;bottom: 0px;}
+.likeImg{width: 300px;height: 200px;position: absolute;z-index: 1000;}
+
+
+
+@media (max-width:1280px) { 
+	.d-tatle>*{font-size:10px; }
+}
+.line-magin{margin-top: 10px;}
+.content-right{float: right;}
+::-webkit-scrollbar {
+    width: 14px;
+    height: 20px;
+}
+::-moz-scrollbar {
+    width: 12px;
+    height: 20px;
+}
+::-ms-scrollbar {
+    width: 12px;
+    height: 20px;
+}
+::-o-scrollbar {
+    width: 12px;
+    height: 20px;
+}
+::scrollbar {
+    width: 14px;
+    height: 20px;
+}
+
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    border: 5px solid transparent;
+}
+::-moz-scrollbar-track,
+::-moz-scrollbar-thumb {
+    border-radius: 999px;
+    border: 5px solid transparent;
+}
+::-o-scrollbar-track,
+::-o-scrollbar-thumb {
+    border-radius: 999px;
+    border: 5px solid transparent;
+}
+::-ms-scrollbar-track,
+::-ms-scrollbar-thumb {
+    border-radius: 999px;
+    border: 5px solid transparent;
+}
+::scrollbar-track,
+::scrollbar-thumb {
+    border-radius: 999px;
+    border: 5px solid transparent;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: 1px 1px 2px rgba(56,126,245,.4) inset;
+}
+::-moz-scrollbar-track {
+    box-shadow: 1px 1px 2px rgba(56,126,245,.4) inset;
+}
+::-ms-scrollbar-track {
+    box-shadow: 1px 1px 2px rgba(56,126,245,.4) inset;
+}
+::-o-scrollbar-track {
+    box-shadow: 1px 1px 2px rgba(56,126,245,.4) inset;
+}
+::scrollbar-track {
+    box-shadow: 1px 1px 2px rgba(56,126,245,.4) inset;
+}
+
+::-webkit-scrollbar-thumb {
+    min-height: 20px;
+    background-clip: content-box;
+    box-shadow: 0 0 0 5px rgba(56,126,245,.7) inset;
+}
+::-moz-scrollbar-thumb {
+    min-height: 20px;
+    background-clip: content-box;
+    box-shadow: 0 0 0 5px rgba(56,126,245,.7) inset;
+}
+::-ms-scrollbar-thumb {
+    min-height: 20px;
+    background-clip: content-box;
+    box-shadow: 0 0 0 5px rgba(56,126,245,.7) inset;
+}
+::-o-scrollbar-thumb {
+    min-height: 20px;
+    background-clip: content-box;
+    box-shadow: 0 0 0 5px rgba(13,66,26,.7) inset;
+}
+::scrollbar-thumb {
+    min-height: 20px;
+    background-clip: content-box;
+    box-shadow: 0 0 0 5px rgba(56,126,245,.7) inset;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+::-moz-scrollbar-corner {
+    background: transparent;
+}
+::-o-scrollbar-corner {
+    background: transparent;
+}
+::-ms-scrollbar-corner {
+    background: transparent;
+}
+::scrollbar-corner {
+    background: transparent;
+}

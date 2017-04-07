@@ -1,0 +1,26 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-header-bar align-title="center" class="bar-positive" >
+    <button style="position: absolute;top:35%;left:3%;border:none;width:14px;height:23px;background:url('img/02.png')no-repeat;background-size:8px,13px" class="button button-icon" ui-sref="tab.newsList">
+     </button>
+    <h3 class="title" style="color: white">资讯</h3>
+</ion-header-bar>
+
+<ion-tabs class="tabs-icon-top tabs-item-hide">
+
+  <!-- Dashboard Tab -->
+  <ion-tab>
+    <ion-nav-view name="tab-newsList"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Chats Tab -->
+  <ion-tab>
+    <ion-nav-view name="tab-detail"></ion-nav-view>
+  </ion-tab>
+
+
+
+</ion-tabs>

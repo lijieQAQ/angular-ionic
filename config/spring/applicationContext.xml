@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="    
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop-4.2.xsd  
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd  
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-4.2.xsd  
+        http://www.springframework.org/schema/jee 
+        http://www.springframework.org/schema/jee/spring-jee-4.2.xsd  
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+        
+	<context:component-scan base-package="com.culture" />   
+	
+	<context:property-placeholder location="classpath:jdbc.properties" />
+	<!-- 配置数据源 ，dbcp -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${jdbc.driver}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="acquireIncrement" value="10"></property>
+		<property name="idleConnectionTestPeriod" value="60"></property>
+		<property name="maxPoolSize" value="100"></property>
+		<property name="maxStatements" value="50"></property>
+		<property name="minPoolSize" value="10"></property>
+	</bean>
+    
+    <!-- sqlSessionFactory -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 数据库连接池 -->
+		<property name="dataSource" ref="dataSource" />
+		<!-- 加载mybatis的全局配置文件 -->
+		<property name="configLocation" value="classpath:mybatis/sqlMapConfig.xml" />
+	</bean>
+	<!-- mapper扫描器 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!-- 扫描包路径，如果需要扫描多个包，中间使用半角逗号隔开 -->
+		<property name="basePackage" value="com.culture.mapper"></property>
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+	
+	<!-- 事务管理器 
+	对mybatis操作数据库事务控制，spring使用jdbc的事务控制类-->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+
+	<!-- 通知 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<!-- 传播行为 -->
+			<tx:method name="save*" propagation="REQUIRED"/>
+			<tx:method name="delete*" propagation="REQUIRED"/>
+			<tx:method name="insert*" propagation="REQUIRED"/>
+			<tx:method name="update*" propagation="REQUIRED"/>
+			<tx:method name="find*" propagation="SUPPORTS" read-only="true"/>
+			<tx:method name="get*" propagation="SUPPORTS" read-only="true"/>
+			<tx:method name="select*" propagation="SUPPORTS" read-only="true"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- aop -->
+	<aop:config>
+		<aop:advisor advice-ref="txAdvice" pointcut="execution(* com.culture.serviceImpl.*.*(..))"/>
+	</aop:config>
+	
+	<!--   启动对@AspectJ注解的支持 -->
+<!--  	<aop:aspectj-autoproxy/>  -->
+	<!-- aopLog日志的记录 -->
+<!-- 	<bean id="log" class="com.culture.util.Log"></bean>
+	
+	<aop:config>
+	     <aop:aspect ref="log" id="cut">
+               <aop:pointcut expression="execution(* com.culture.controller.*.*(..))" id="pointCutLog"/>	  
+	           <aop:before method="before" pointcut-ref="pointCutLog" />
+	           <aop:after method="after" pointcut-ref="pointCutLog" />
+	     </aop:aspect>
+	</aop:config> 
+ -->
+
+</beans>

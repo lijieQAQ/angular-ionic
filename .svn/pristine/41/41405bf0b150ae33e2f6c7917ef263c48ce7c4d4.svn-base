@@ -1,0 +1,9 @@
+html,body{width: 100%;height: 100%;margin: 0px;padding: 0px;background-image: url("images/login-bg.jpg");background-repeat: no-repeat;background-size: 100% auto;}
+.login_box{position: absolute;right: 10%;top:20%;height: 450px;width: 500px;}
+.login-box-n{width: 100%;height: 100%;border-radius: 15px;background-color: RGBA(56,126,245,0.8);position: relative;}
+.login-title{color: #ffffff;text-align: center;height: 100px;line-height: 100px;}
+.rh{height: 150px;}
+.rh-3{height: 100px;}
+.icon{font-size: 2em;color: #ffffff;float: right;line-height: 50px;}
+.d-input{display: inline-block;float: left;}
+.btn-submit{width: 60%;text-align: center;font-size: 1.5em;font-weight: bold;outline: none;}

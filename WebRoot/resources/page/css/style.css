@@ -1,0 +1,333 @@
+/* Empty. Add your own CSS if you like */
+.box{
+    width: 100%;
+    height: 160px;
+}
+.box img{
+    width:100%;
+}
+.depts{height: 44px;position: relative;overflow-x: scroll;white-space: nowrap;overflow-y:hidden;}
+.depts>label{display: inline-block;width:25%;height: 34px;line-height: 34px;border-bottom:0px solid #38c;}
+.person-box{width: 100%;height: 100%;position: relative;top: 0px;}
+.list-item-title{position: relative;top: 0px;min-height: 34px;}
+::-webkit-scrollbar{width:0px}
+@-webkit-keyframes head_jitter{
+    0% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        -webkit-transform: translate(1.5px, -2.5px) rotate(-1.5deg)
+    }
+    4% {
+        -webkit-transform: translate(-2.5px, 0.5px) rotate(-0.5deg)
+    }
+    6% {
+        -webkit-transform: translate(1.5px, 1.5px) rotate(0.5deg)
+    }
+    8% {
+        -webkit-transform: translate(1.5px, 1.5px) rotate(-0.5deg)
+    }
+    10% {
+        -webkit-transform: translate(1.5px, 0.5px) rotate(0.5deg)
+    }
+    12% {
+        -webkit-transform: translate(0.5px, -1.5px) rotate(-1.5deg)
+    }
+    14% {
+        -webkit-transform: translate(-2.5px, -0.5px) rotate(-0.5deg)
+    }
+    16% {
+        -webkit-transform: translate(0.5px, 1.5px) rotate(-1.5deg)
+    }
+    18% {
+        -webkit-transform: translate(-1.5px, 1.5px) rotate(-0.5deg)
+    }
+    20% {
+        -webkit-transform: translate(0.5px, 1.5px) rotate(0.5deg)
+    }
+    22% {
+        -webkit-transform: translate(-1.5px, 0.5px) rotate(-0.5deg)
+    }
+    24% {
+        -webkit-transform: translate(-2.5px, 1.5px) rotate(-1.5deg)
+    }
+    26% {
+        -webkit-transform: translate(0.5px, 0.5px) rotate(-0.5deg)
+    }
+    28% {
+        -webkit-transform: translate(-0.5px, -2.5px) rotate(-1.5deg)
+    }
+    30% {
+        -webkit-transform: translate(-1.5px, 1.5px) rotate(-1.5deg)
+    }
+    32% {
+        -webkit-transform: translate(0.5px, 0.5px) rotate(-0.5deg)
+    }
+    34% {
+        -webkit-transform: translate(1.5px, -0.5px) rotate(0.5deg)
+    }
+    36% {
+        -webkit-transform: translate(-1.5px, -1.5px) rotate(-0.5deg)
+    }
+    38% {
+        -webkit-transform: translate(-2.5px, -2.5px) rotate(-1.5deg)
+    }
+    40% {
+        -webkit-transform: translate(-1.5px, 0.5px) rotate(-0.5deg)
+    }
+    42% {
+        -webkit-transform: translate(-0.5px, 1.5px) rotate(-1.5deg)
+    }
+    44% {
+        -webkit-transform: translate(-2.5px, -0.5px) rotate(0.5deg)
+    }
+    46% {
+        -webkit-transform: translate(-2.5px, -1.5px) rotate(0.5deg)
+    }
+    48% {
+        -webkit-transform: translate(-2.5px, -2.5px) rotate(0.5deg)
+    }
+    50% {
+        -webkit-transform: translate(0.5px, -1.5px) rotate(-1.5deg)
+    }
+    52% {
+        -webkit-transform: translate(0.5px, 1.5px) rotate(0.5deg)
+    }
+    54% {
+        -webkit-transform: translate(1.5px, -0.5px) rotate(-1.5deg)
+    }
+    56% {
+        -webkit-transform: translate(-1.5px, -1.5px) rotate(-1.5deg)
+    }
+    58% {
+        -webkit-transform: translate(0.5px, 1.5px) rotate(-0.5deg)
+    }
+    60% {
+        -webkit-transform: translate(-0.5px, -0.5px) rotate(0.5deg)
+    }
+    62% {
+        -webkit-transform: translate(0.5px, 1.5px) rotate(-0.5deg)
+    }
+    64% {
+        -webkit-transform: translate(-2.5px, 0.5px) rotate(0.5deg)
+    }
+    66% {
+        -webkit-transform: translate(-0.5px, -2.5px) rotate(0.5deg)
+    }
+    68% {
+        -webkit-transform: translate(-2.5px, -2.5px) rotate(-1.5deg)
+    }
+    70% {
+        -webkit-transform: translate(-1.5px, 0.5px) rotate(-1.5deg)
+    }
+    72% {
+        -webkit-transform: translate(-1.5px, 0.5px) rotate(-0.5deg)
+    }
+    74% {
+        -webkit-transform: translate(-1.5px, 1.5px) rotate(-0.5deg)
+    }
+    76% {
+        -webkit-transform: translate(-1.5px, -2.5px) rotate(0.5deg)
+    }
+    78% {
+        -webkit-transform: translate(-1.5px, -2.5px) rotate(-0.5deg)
+    }
+    80% {
+        -webkit-transform: translate(-0.5px, 1.5px) rotate(-0.5deg)
+    }
+    82% {
+        -webkit-transform: translate(1.5px, -1.5px) rotate(-0.5deg)
+    }
+    84% {
+        -webkit-transform: translate(-0.5px, -1.5px) rotate(-1.5deg)
+    }
+    86% {
+        -webkit-transform: translate(-2.5px, 0.5px) rotate(-0.5deg)
+    }
+    88% {
+        -webkit-transform: translate(-2.5px, -0.5px) rotate(-0.5deg)
+    }
+    90% {
+        -webkit-transform: translate(-0.5px, 0.5px) rotate(-1.5deg)
+    }
+    92% {
+        -webkit-transform: translate(1.5px, -2.5px) rotate(0.5deg)
+    }
+    94% {
+        -webkit-transform: translate(0.5px, 1.5px) rotate(-1.5deg)
+    }
+    96% {
+        -webkit-transform: translate(1.5px, -0.5px) rotate(-1.5deg)
+    }
+    98% {
+        -webkit-transform: translate(-0.5px, 0.5px) rotate(-0.5deg)
+    }
+}
+
+
+@-webkit-keyframes horizontal {
+    0% {
+        -webkit-transform: translate(0px, 0px) rotate(0deg)
+    }
+    2% {
+        -webkit-transform: translate(-3px, 0px) rotate(0deg)
+    }
+    4% {
+        -webkit-transform: translate( 1px, 0px) rotate(0deg)
+    }
+    6% {
+        -webkit-transform: translate(3px, 0px) rotate(0deg)
+    }
+    8% {
+        -webkit-transform: translate(1px, 0px) rotate(0deg)
+    }
+    10% {
+        -webkit-transform: translate(3px, 0px) rotate(0deg)
+    }
+    12% {
+        -webkit-transform: translate(1px, 0px) rotate(0deg)
+    }
+    14% {
+        -webkit-transform: translate(3px, 0px) rotate(0deg)
+    }
+    16% {
+        -webkit-transform: translate(-1px, 0px) rotate(0deg)
+    }
+    18% {
+        -webkit-transform: translate(-3px, 0px) rotate(0deg)
+    }
+    20% {
+        -webkit-transform: translate(1px, 0px) rotate(0deg)
+    }
+    22% {
+        -webkit-transform: translate(3px, 0px) rotate(0deg)
+    }
+    24% {
+        -webkit-transform: translate(1px, 0px) rotate(0deg)
+    }
+    26% {
+        -webkit-transform: translate(1px, 0px) rotate(0deg)
+    }
+    28% {
+        -webkit-transform: translate(3px, 0px) rotate(0deg)
+    }
+    30% {
+        -webkit-transform: translate(1px, 0px) rotate(0deg)
+    }
+    32% {
+        -webkit-transform: translate(-3px, 0px) rotate(0deg)
+    }
+    34% {
+        -webkit-transform: translate(-2px, 0px) rotate(0deg)
+    }
+    36% {
+        -webkit-transform: translate(3px, 0px) rotate(0deg)
+    }
+    38% {
+        -webkit-transform: translate(-1px, 0px) rotate(0deg)
+    }
+    40% {
+        -webkit-transform: translate(-3px, 0px) rotate(0deg)
+    }
+    42% {
+        -webkit-transform: translate(1px, 0px) rotate(0deg)
+    }
+    44% {
+        -webkit-transform: translate(-1px, 0px) rotate(0deg)
+    }
+    46% {
+        -webkit-transform: translate(-3px, 0px) rotate(0deg)
+    }
+    48% {
+        -webkit-transform: translate(2px, 0px) rotate(0deg)
+    }
+    50% {
+        -webkit-transform: translate(-1px, 0px) rotate(0deg)
+    }
+    52% {
+        -webkit-transform: translate(3px, 0px) rotate(0deg)
+    }
+    54% {
+        -webkit-transform: translate(2px, 0px) rotate(0deg)
+    }
+    56% {
+        -webkit-transform: translate(1px, 0px) rotate(0deg)
+    }
+    58% {
+        -webkit-transform: translate(1px, 0px) rotate(0deg)
+    }
+    60% {
+        -webkit-transform: translate(2px, 0px) rotate(0deg)
+    }
+    62% {
+        -webkit-transform: translate(-1px, 0px) rotate(0deg)
+    }
+    64% {
+        -webkit-transform: translate(-2px, 0px) rotate(0deg)
+    }
+    66% {
+        -webkit-transform: translate(-3px, 0px) rotate(0deg)
+    }
+    68% {
+        -webkit-transform: translate(3px, 0px) rotate(0deg)
+    }
+    70% {
+        -webkit-transform: translate(2px, 0px) rotate(0deg)
+    }
+    72% {
+        -webkit-transform: translate(-1px, 0px) rotate(0deg)
+    }
+    74% {
+        -webkit-transform: translate(-2px, 0px) rotate(0deg)
+    }
+    76% {
+        -webkit-transform: translate(2px, 0px) rotate(0deg)
+    }
+    78% {
+        -webkit-transform: translate(1px, 0px) rotate(0deg)
+    }
+    80% {
+        -webkit-transform: translate(-2px, 0px) rotate(0deg)
+    }
+    82% {
+        -webkit-transform: translate(-1px, 0px) rotate(0deg)
+    }
+    84% {
+        -webkit-transform: translate(-3px, 0px) rotate(0deg)
+    }
+    86% {
+        -webkit-transform: translate(2px, 0px) rotate(0deg)
+    }
+    88% {
+        -webkit-transform: translate(-1px, 0px) rotate(0deg)
+    }
+    90% {
+        -webkit-transform: translate(-3px, 0px) rotate(0deg)
+    }
+    92% {
+        -webkit-transform: translate(-2px, 0px) rotate(0deg)
+    }
+    94% {
+        -webkit-transform: translate(1px, 0px) rotate(0deg)
+    }
+    96% {
+        -webkit-transform: translate(-3px, 0px) rotate(0deg)
+    }
+    98% {
+        -webkit-transform: translate(3px, 0px) rotate(0deg)
+    }
+}
+
+
+
+/* 详情页面样式 */
+.contentDetail p{
+	text-indent: none!important;
+}
+.contentDetail p video{
+	max-width:100%!important;
+}
+
+
+
+

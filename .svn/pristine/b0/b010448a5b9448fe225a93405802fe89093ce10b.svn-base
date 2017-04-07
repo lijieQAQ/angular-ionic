@@ -1,0 +1,33 @@
+<ion-view on-swipe-left="onSwipeLeft()" on-swipe-right="onSwipeRight()" hide-tabs="true">
+	
+   <ion-content>
+   <ion-refresher pulling-text="{{today | date:'yyyy-MM-dd hh:mm:ss'}}" on-refresh="doRefresh()"></ion-refresher>
+   <br/>
+   <span style="font-size: 28px;">{{doc.title}}</span><br/><br/>
+   <div id="content" ng-bind-html="docContent" style="padding: 10px">
+   </div>
+      <div style="padding: 10px"><!-- <img ng-click="thumbUp(doc.id)" id="thumbUp" ng-src="img/1130675.png" style="width: 50px;height: 50px"> -->
+      <div ng-if="doc.isThumbsUp==2" ng-click="thumbUp(doc.id)" style="width:40px;height:40px"><item id="thumbUp"  class="ion-thumbsup" ng-style="thumbUpStyle"></item><span style="position: relative; bottom: 10%;left:10px;color:rgba(175,175,175,1)">{{nicecount}}</span><br/><br/></div>
+    <p ng-if="doc.isReply==2">{{reviewCount}}个回复</p>
+    	<ul class="list" id="review" style="position: relative;left: -5%;">
+	    	<li class="item" ng-repeat="review in reviews" style="border: none;border-top:1px solid;margin-right: -25px;color:rgba(175,175,175,1)">
+		    	<div>
+			    	<span ng-if="review.toname!=''&&review.toname!=null">{{review.uname}} 回复  {{review.toname}}</span>
+			    	<span ng-if="review.toname==''||review.toname==null">{{review.uname}}</span>
+			    	<span style="position: absolute;right:3px;">{{review.time}}</span><br/><br/>
+			    </div>
+			    <div  style="color:#444">{{review.msg}}</div><br/>
+		    	<div ng-if="niceState[$index]==false"><a ng-click="nices(review.id,$index)">赞({{nice[$index]}})<a>.<a ng-click="showPopup(review.docid,review.uname,review.userid)" class="">回复</a></div>
+	    		<div ng-if="niceState[$index]==true"><a ng-click="nices(review.id,$index)">我已赞({{nice[$index]}})<a>.<a ng-click="showPopup(review.docid,review.uname,review.userid)" class="">回复</a></div>
+	    	</li>
+    	</ul>
+      </div>
+       <div ng-if="doc.isReply==2" style="height:180px;">
+   		  <div style="width: 100%;height:180px;" class="item item-input item-stacked-label">
+          <span class="input-label" style="color:rgba(175,175,175,1)">{{username}}</span><br/><br/>
+          <textarea id="replyid{{doc.id}}" style="border: solid 1px rgba(175,175,175,1);width:100%;height: 80px;position: relative;bottom:10px;right:2%"></textarea>
+           <button ng-click="reply(doc.id)"  value="回复" style="width:90px;height:40px;background-color: #5cb85c;position: relative;bottom:0px;float: right; margin-right: 5px;color: white; border: 1px solid #5cb85c;border-radius: 5px">回复</button>
+        </div>
+   </div>
+   </ion-content>
+</ion-view>

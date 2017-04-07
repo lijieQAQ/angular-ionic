@@ -1,0 +1,25 @@
+<ion-view on-swipe-left="onSwipeLeft()" on-swipe-right="onSwipeRight()"  ng-controller="personDeptCtrl" >
+   <div class="bar bar-subheader bar-light" style="border:none">
+        <div class="depts" id="moveid" style="border:none">
+            <label class="tab-item"   ng-repeat="module in moduleList" id="{{module.id}}" ng-click="changeModule({{module.id}})" style="border:none">{{module.name}}</label>
+        </div>
+    </div>
+    <ion-content style="position: absolute;top: 88px;">
+    <ion-refresher pulling-text="{{today | date:'yyyy-MM-dd hh:mm:ss'}}" on-refresh="doRefresh()"></ion-refresher>
+	    <ion-slide-box on-slide-changed="slideHasChanged($index)" auto-play="true" slide-interval=2000 show-pager="true" ctive-slide="currentIndex">
+	        <ion-slide ng-repeat="docp in docPlay"  ng-click="todetail({{docp.id}})" ng-if="docPlay!=null">
+	            <div class="box">
+	                <img ng-src="/culture/{{docp.url}}">
+	            </div>
+	        </ion-slide>
+	    </ion-slide-box>
+	<ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+        <ion-item  ng-repeat="docl in doclist" ng-click="todetail({{docl.id}})"  style="height:100px;">
+            <img style="position:absolute;bottom:10px;width:123px;height:80px;left:2px;vertical-align:text-top;" ng-src="/culture/{{docl.url}}">
+            <div style="position:absolute;top:5px;left: 40%;white-space:normal;word-break:break-all;overflow:hidden;">{{docl.title}}</div>
+       		<div style="position:relative;top:45%;left: 40%;width: 65%;white-space:normal;word-break:break-all;overflow:hidden;font-size: 12px;color: #ACAFAF">{{docl.passage}}</div>
+        </ion-item>
+    </ion-list>
+    <ion-infinite-scroll distance="1%" on-infinite="loadMore()" icon="ion-loading-d"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>
